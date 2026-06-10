@@ -1,0 +1,57 @@
+flowchart TD
+    subgraph 1. User Input
+        User(("👤 User"))
+        Question["💬 Natural Language Question\n(e.g., 'Which vessel has the highest CO2?')"]
+    end
+
+    subgraph 2. Retrieval Phase (RAG)
+        Embeddings["🧠 Ollama Embeddings\n(Model: nomic-embed-text)"]
+        FAISS[("🗂️ FAISS Vector Database\n(Contains Table & Column Descriptions)")]
+        Retrieval["🔍 Extract Top-5 Relevant\nDatabase Schemas"]
+    end
+
+    subgraph 3. SQL Generation (Pass 1)
+        PromptGen["📝 Construct Context Prompt\n(Question + Top 5 Schemas + Chat History)"]
+        Groq1["🤖 Groq API (Llama 3.1 8B)\nTask: Text-to-SQL Generation"]
+        SQL["⚙️ Generated SQL Query"]
+    end
+
+    subgraph 4. Routing & Execution
+        DBRouter{"🔀 Database Router\n(PostgreSQL vs ClickHouse?)"}
+        PG[("🐘 PostgreSQL\n(Emissions, Anomalies, History)")]
+        CH[("📊 ClickHouse\n(Live Tracking, Simulation)")]
+        RawData["📑 Raw Query Results\n(List of Dictionaries/Tuples)"]
+    end
+
+    subgraph 5. Summarization Phase (Pass 2)
+        Groq2["🤖 Groq API (Llama 3.1 8B)\nTask: Data Summarization"]
+        FinalAnswer["✅ Formatted Markdown Answer\n(Bold, Italics, Tables)"]
+    end
+
+    %% Connections
+    User --> Question
+    Question --> Embeddings
+    Embeddings --> FAISS
+    FAISS --> Retrieval
+    
+    Retrieval --> PromptGen
+    Question --> PromptGen
+    PromptGen --> Groq1
+    Groq1 --> SQL
+    
+    SQL --> DBRouter
+    DBRouter -- "Relational Queries" --> PG
+    DBRouter -- "Time-Series/Live Data" --> CH
+    PG & CH --> RawData
+    
+    RawData --> Groq2
+    Question --> Groq2
+    Groq2 --> FinalAnswer
+    FinalAnswer --> User
+
+    %% Styling
+    style 1. User Input fill:#0f172a,stroke:#3b82f6,stroke-width:2px,color:#fff
+    style 2. Retrieval Phase (RAG) fill:#1e1b4b,stroke:#8b5cf6,stroke-width:2px,color:#fff
+    style 3. SQL Generation (Pass 1) fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#fff
+    style 4. Routing & Execution fill:#450a0a,stroke:#ef4444,stroke-width:2px,color:#fff
+    style 5. Summarization Phase (Pass 2) fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#fff

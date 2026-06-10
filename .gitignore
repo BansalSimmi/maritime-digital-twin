@@ -1,0 +1,79 @@
+# ==========================
+# Python Virtual Environments
+# ==========================
+project/
+venv/
+env/
+.venv/
+
+# ==========================
+# Large Import/Data folders
+# ==========================
+import/
+
+# ==========================
+# Environment & Secrets
+# ==========================
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.secret
+
+# ==========================
+# Python
+# ==========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+.venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+*.log
+
+# ==========================
+# Node / Frontend
+# ==========================
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+.next/
+.nuxt/
+*.tsbuildinfo
+
+# ==========================
+# Large Data Files
+# ==========================
+*.csv
+*.xlsx
+*.xls
+raw_data/
+*.parquet
+*.pkl
+*.db
+*.sqlite3
+*.dump
+*.sql.gz
+
+# ==========================
+# IDE & OS
+# ==========================
+.cursor/
+.vscode/
+.idea/
+*.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==========================
+# Jupyter Notebooks (optional)
+# ==========================
+.ipynb_checkpoints/

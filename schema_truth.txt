@@ -1,0 +1,65 @@
+--- POSTGRESQL COLUMNS ---
+Table: ais_data
+Columns: ['id', 'mmsi', 'base_date_time', 'longitude', 'latitude', 'sog', 'cog', 'heading', 'vessel_name', 'imo', 'call_sign', 'vessel_type', 'status', 'length', 'width', 'draft', 'cargo', 'transceiver']
+
+Table: spatial_ref_sys
+Columns: ['srid', 'auth_name', 'auth_srid', 'srtext', 'proj4text']
+
+Table: vessel_profiles
+Columns: ['vessel_type_code', 'vessel_category', 'design_speed', 'mcr_kw', 'sfc', 'co2_factor', 'nox_factor', 'sox_factor']
+
+Table: emissions
+Columns: ['emission_id', 'mmsi', 'vessel_type_code', 'vessel_category', 'speed', 'engine_load', 'fuel_consumption', 'co2_emission', 'nox_emission', 'sox_emission', 'latitude', 'longitude', 'calculation_source', 'calculated_at']
+
+Table: emergencies
+Columns: ['emergency_id', 'mmsi', 'emergency_type', 'severity', 'status', 'latitude', 'longitude', 'geom', 'reported_at']
+
+Table: rescue_operations
+Columns: ['rescue_id', 'emergency_id', 'rescue_vessel', 'eta_minutes', 'route_distance', 'response_status', 'created_at']
+
+Table: emission_predictions
+Columns: ['prediction_id', 'mmsi', 'predicted_co2', 'predicted_speed', 'prediction_horizon_minutes', 'model_used', 'created_at']
+
+Table: analytics_summary
+Columns: ['id', 'metric_name', 'metric_value', 'region', 'created_at']
+
+Table: map_layers
+Columns: ['layer_id', 'layer_name', 'layer_type', 'is_active']
+
+Table: anomaly_events
+Columns: ['anomaly_id', 'mmsi', 'vessel_name', 'anomaly_type', 'severity', 'description', 'latitude', 'longitude', 'sog', 'extra_data', 'detected_at', 'is_resolved', 'resolved_at']
+
+Table: piracy_events
+Columns: ['piracy_id', 'event_date', 'event_time', 'event_timestamp', 'attack_type', 'attack_description', 'risk_level', 'latitude', 'longitude', 'geom', 'location_description', 'nearest_country', 'eez_country', 'shore_distance', 'shore_longitude', 'shore_latitude', 'vessel_name', 'vessel_type', 'vessel_status', 'data_source', 'created_at']
+
+Table: accounts
+Columns: ['account_id', 'name', 'email', 'password_hash', 'role', 'created_at']
+
+Table: user_sessions
+Columns: ['session_id', 'account_id', 'token', 'login_time', 'logout_time']
+
+Table: chatbot_history
+Columns: ['chat_id', 'account_id', 'user_message', 'bot_response', 'created_at']
+
+Table: piracy_risk_zones
+Columns: ['zone_id', 'risk_score', 'geom', 'model_used', 'generated_at']
+
+Table: emergency_simulations
+Columns: ['simulation_id', 'emergency_id', 'affected_radius_km', 'predicted_damage', 'response_success_probability', 'simulation_time']
+
+Table: digital_twin_state
+Columns: ['mmsi', 'latitude', 'longitude', 'current_speed', 'simulated_latitude', 'simulated_longitude', 'simulated_speed', 'predicted_route', 'simulation_scenario', 'last_update', 'simulation_time']
+
+Table: vessel_anomalies1
+Columns: ['anomaly_id', 'mmsi', 'anomaly_type', 'anomaly_score', 'description', 'detected_at', 'latitude', 'longitude', 'created_at']
+
+Table: geofence_zones
+Columns: ['zone_id', 'zone_name', 'description', 'polygon', 'created_at']
+
+--- CLICKHOUSE COLUMNS ---
+Table: maritime_digital_twin.ais_data
+Columns: ['mmsi', 'base_date_time', 'latitude', 'longitude', 'sog', 'cog', 'heading', 'vessel_name', 'imo', 'call_sign', 'vessel_type', 'status', 'length', 'width', 'draft', 'cargo', 'transceiver']
+
+Table: maritime_digital_twin.digital_twin_state
+Columns: ['mmsi', 'latitude', 'longitude', 'speed', 'heading', 'last_update', 'simulated_latitude', 'simulated_longitude', 'simulated_speed', 'predicted_route', 'simulation_scenario', 'simulation_time']
+
