@@ -2,15 +2,15 @@
 
 A comprehensive, AI-powered Maritime Digital Twin platform for real-time vessel tracking, anomaly detection, carbon emissions monitoring, and predictive simulation. This project provides a holistic view of maritime operations by combining spatial data, time-series analytics, and advanced Large Language Model (LLM) workflows.
 
-## 🌟 Key Features
+## Key Features
 
-* **🗺️ Real-Time Vessel Tracking:** Interactive map analytics utilizing Leaflet and geospatial processing to track and monitor fleet movements.
-* **⚠️ Anomaly Detection:** Automated detection of unusual vessel behaviors, route deviations, and operational anomalies.
-* **🌱 Carbon Emissions Monitoring:** Track and analyze environmental impact and emissions data across the fleet.
-* **🔄 Digital Twin Simulation:** Predictive simulation engine to model maritime scenarios and optimize operations.
-* **🤖 AI-Powered Chatbot:** Advanced RAG (Retrieval-Augmented Generation) chatbot powered by Langchain, Langgraph, and Groq to answer complex questions about vessel data, operations, and anomalies.
+* ** Real-Time Vessel Tracking:** Interactive map analytics utilizing Leaflet and geospatial processing to track and monitor fleet movements.
+* ** Anomaly Detection:** Automated detection of unusual vessel behaviors, route deviations, and operational anomalies.
+* ** Carbon Emissions Monitoring:** Track and analyze environmental impact and emissions data across the fleet.
+* ** Digital Twin Simulation:** Predictive simulation engine to model maritime scenarios and optimize operations.
+* ** AI-Powered Chatbot:** Advanced RAG (Retrieval-Augmented Generation) chatbot powered by Langchain, Langgraph, and Groq to answer complex questions about vessel data, operations, and anomalies.
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Backend (Python/FastAPI)
 * **Framework:** FastAPI
@@ -30,7 +30,7 @@ A comprehensive, AI-powered Maritime Digital Twin platform for real-time vessel 
 * **Mapping:** Leaflet & React-Leaflet
 * **UI/Icons:** Lucide React, React-Markdown
 
-## 📁 Project Structure
+##  Project Structure
 
 ```text
 maritime-digital-twin/
@@ -52,7 +52,7 @@ maritime-digital-twin/
 └── swagger.json              # API Schema documentation
 ```
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 * Python 3.9+
@@ -94,5 +94,5 @@ maritime-digital-twin/
    ```
    The UI will be accessible at `http://localhost:5173`.
 
-## 🤝 Contributing
+##  Contributing 
 Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
