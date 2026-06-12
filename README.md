@@ -4,11 +4,11 @@ A comprehensive, AI-powered Maritime Digital Twin platform for real-time vessel 
 
 ## Key Features
 
-* Real-Time Vessel Tracking:** Interactive map analytics utilizing Leaflet and geospatial processing to track and monitor fleet movements.
-* Anomaly Detection:** Automated detection of unusual vessel behaviors, route deviations, and operational anomalies.
-* Carbon Emissions Monitoring:** Track and analyze environmental impact and emissions data across the fleet.
-* Digital Twin Simulation:** Predictive simulation engine to model maritime scenarios and optimize operations.
-* AI-Powered Chatbot:** Advanced RAG (Retrieval-Augmented Generation) chatbot powered by Langchain, Langgraph, and Groq to answer complex questions about vessel data, operations, and anomalies.
+* Real-Time Vessel Tracking: Interactive map analytics utilizing Leaflet and geospatial processing to track and monitor fleet movements.
+* Anomaly Detection: Automated detection of unusual vessel behaviors, route deviations, and operational anomalies.
+* Carbon Emissions Monitoring: Track and analyze environmental impact and emissions data across the fleet.
+* Digital Twin Simulation: Predictive simulation engine to model maritime scenarios and optimize operations.
+* AI-Powered Chatbot: Advanced RAG (Retrieval-Augmented Generation) chatbot powered by Langchain, Langgraph, and Groq to answer complex questions about vessel data, operations, and anomalies.
 
 ##  Tech Stack
 
