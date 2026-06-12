@@ -52,6 +52,10 @@ maritime-digital-twin/
 └── swagger.json              # API Schema documentation
 ```
 
+#System Architecture - 
+
+<img width="1536" height="1024" alt="system architecture" src="https://github.com/user-attachments/assets/0c8ceb43-bec4-4152-9aa0-66a17760eaf7" />
+
 ##  Getting Started
 
 ### Prerequisites
